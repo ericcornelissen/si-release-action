@@ -7,7 +7,7 @@ async function main(core, github, { makeRelease, mergeOnApprove }) {
 
   const event = github.context.eventName;
   switch (event) {
-    case 'pull_request': // for testing
+    case 'push': // for debugging
     case EVENT_SCHEDULE:
       core.info('Scheduled run; creating release PR');
       await makeRelease(core, client, github.context);
